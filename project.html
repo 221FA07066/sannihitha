@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Student Task Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .task-list {
+            margin-top: 20px;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>IT Student Task Management</h1>
+
+        <div>
+            <h2>Enter a new task</h2>
+            <input type="text" id="newTask" placeholder="Enter task here">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="task-list">
+            <h2>Pending Works</h2>
+            <p>Pending Tasks: <span id="pendingCount">0</span></p>
+            <ul id="pendingTasks"></ul>
+
+            <h2>Completed Works</h2>
+            <p>Completed Tasks: <span id="completedCount">0</span></p>
+            <ul id="completedTasks"></ul>
+        </div>
+    </div>
+
+    <script>
+        let pendingTasks = [];
+        let completedTasks = [];
+
+        function addTask() {
+            const taskInput = document.getElementById('newTask');
+            const task = taskInput.value.trim();
+
+            if (task === '') {
+                alert('Please enter a task.');
+                return;
+            }
+
+            pendingTasks.push(task);
+            taskInput.value = '';
+            updateTaskLists();
+        }
+
+        function completeTask(index) {
+            completedTasks.push(pendingTasks[index]);
+            pendingTasks.splice(index, 1);
+            updateTaskLists();
+        }
+
+        function updateTaskLists() {
+            const pendingList = document.getElementById('pendingTasks');
+            const completedList = document.getElementById('completedTasks');
+            const pendingCount = document.getElementById('pendingCount');
+            const completedCount = document.getElementById('completedCount');
+
+            pendingList.innerHTML = '';
+            completedList.innerHTML = '';
+
+            pendingTasks.forEach((task, index) => {
+                pendingList.innerHTML += `<li class="task-item">
+                    ${task} 
+                    <button onclick="completeTask(${index})">Complete</button>
+                </li>`;
+            });
+
+            completedTasks.forEach(task => {
+                completedList.innerHTML += `<li class="task-item completed">
+                    ${task}
+                </li>`;
+            });
+
+            pendingCount.textContent = pendingTasks.length;
+            completedCount.textContent = completedTasks.length;
+        }
+    </script>
+
+</body>
+</html>
