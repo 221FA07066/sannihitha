@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e4007c;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            padding: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        section {
+            padding: 20px;
+            background-color: white;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #e4007c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills ul li {
+            display: inline;
+            background-color: #0073e6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PENTYALA.SANNIHITHA</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>About Me</h2>
+        <img src="C:\Users\91903\OneDrive\Pictures\IMG_20221013_202044.jpg" alt="Profile Picture" class="profile-pic">
+        <p>Hello!  I'm P.SANNIHITHA, a dedicated student pursuing a B.Tech at Vignan
+        University. I'm passionate about Web Applications. Through my coursework
+        and extracurricular activities, I've developed strong skills in HTML,
+        CSS, and JavaScript. I'm eager to apply my knowledge and enthusiasm to
+        Web development and make a positive impact in my field in .
+</p>
+    </section>
+
+    <section class="container">
+        <h2>Skills</h2>
+        <div class="skills">
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Portfolio Website:</strong> A personal website to showcase my skills and projects.</li>
+            <li><strong>Todo App:</strong> A simple todo application built using JavaScript to manage daily tasks.</li>
+            <li><strong>Data Analysis Project:</strong> A Python project that analyzes and visualizes data for insights.</li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Contact</h2>
+        <p>Email: sannihithapentyala979@gmail.com</p>
+        <p>Phone: 9030477905</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 sannihitha. All rights reserved.</p>
+    </footer>
+</body>
+</html>
